@@ -9,12 +9,14 @@ import {
 } from "react-leaflet";
 import { pupUps, uzbData } from "../Constants/uzb";
 
+const center: [number, number] = [40.12442709646927, 67.87769254689282];
+
 function Map() {
-  const center = [40.12442709646927, 67.87769254689282];
   const customIcon = new Icon({
     iconUrl: "https://cdn-icons-png.flaticon.com/128/149/149059.png",
     iconSize: [30, 30],
   });
+
   return (
     <div style={{ height: "500px", width: "100%" }}>
       <MapContainer
@@ -32,7 +34,11 @@ function Map() {
           attribution='<a href="https://www.maptiler.com/copyright/" target="_blank">&copy; MapTiler</a> <a href="https://www.openstreetmap.org/copyright" target="_blank">&copy; OpenStreetMap contributors</a>'
         />
         {pupUps.map((e) => (
-          <Marker key={e?.id} position={e.geo} icon={customIcon}>
+          <Marker
+            key={e?.id}
+            position={e.geo as [number, number]}
+            icon={customIcon}
+          >
             <Popup minWidth={300}>
               <div style={{ display: "flex", alignItems: "center" }}>
                 <div
@@ -74,10 +80,11 @@ function Map() {
           </Marker>
         ))}
         {uzbData.features.map((state) => {
-          const coordinates = state.geometry.coordinates[0].map((item) => [
-            item[1],
-            item[0],
-          ]);
+          const coordinates: [number, number][] =
+            state.geometry.coordinates[0].map((item: number[]) => [
+              item[1],
+              item[0],
+            ]);
 
           return (
             <Polygon
