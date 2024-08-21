@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { CiCircleInfo } from "react-icons/ci";
 import { IoMdClose } from "react-icons/io";
+import { MdKeyboardArrowLeft, MdKeyboardArrowRight } from "react-icons/md";
 import Button from "../../../../Components/Button";
 import { TTrees } from "../../../../Types";
 import CardItem from "./CardItem";
@@ -68,13 +69,13 @@ const PopupCard = ({
             onClick={handlePrevClick}
             className="slider__button slider__button-left"
           >
-            {"<"}
+            <MdKeyboardArrowLeft size={20} />
           </button>
           <button
             onClick={handleNextClick}
             className="slider__button slider__button-right"
           >
-            {">"}
+            <MdKeyboardArrowRight size={20} />
           </button>
         </div>
         <div style={{ padding: "0 20px" }}>
@@ -84,7 +85,11 @@ const PopupCard = ({
           <CardItem title={"Daraxt turi"} info={typeTree} />
           <CardItem title={"Masul tashkilot"} info={guiltyPerson} />
           <CardItem title={"Manzil"} info={location} />
-          <Button size="sm" onClick={handleMoreClick}>
+          <Button
+            size="sm"
+            onClick={handleMoreClick}
+            style={{ marginTop: "20px" }}
+          >
             More
           </Button>
         </div>

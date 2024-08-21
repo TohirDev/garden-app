@@ -28,10 +28,14 @@
   position: absolute;
   bottom: 10px;
   right: 50px;
+  background-color: #319864;
   color: white;
   border: none;
-  padding: 10px;
+  border-radius: 5px;
   cursor: pointer;
+  display: grid;
+  place-items: center;
+  padding: 5px;
 }
 
 .slider__button-right {
