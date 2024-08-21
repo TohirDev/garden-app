@@ -3,7 +3,7 @@ import { Navigate, useRoutes } from "react-router-dom";
 const Garden = lazy(async () => await import("../Pages/Garden"));
 const Map = lazy(async () => await import("../Pages/Map"));
 const TreeDetails = lazy(
-  async () => await import("../Components/TreeDetails")
+  async () => await import("../Pages/Garden/Components/TreeDetails")
 );
 
 const Router = () => {

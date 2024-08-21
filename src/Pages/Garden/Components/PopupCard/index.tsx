@@ -1,7 +1,10 @@
 import { useState } from "react";
 import { CiCircleInfo } from "react-icons/ci";
 import { IoMdClose } from "react-icons/io";
-import { TTrees } from "../Types";
+import Button from "../../../../Components/Button";
+import { TTrees } from "../../../../Types";
+import CardItem from "./CardItem";
+import "./index.css";
 
 interface IPopCarsProps extends Omit<TTrees, "className" | "thumbnail"> {
   handleClosePopup: VoidFunction;
@@ -37,15 +40,7 @@ const PopupCard = ({
   return (
     <div className="overlay">
       <div className="popup-card">
-        <div
-          style={{
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "space-between",
-            background: "#319864",
-            padding: "0 20px",
-          }}
-        >
+        <div className="content">
           <div
             style={{
               display: "flex",
@@ -54,7 +49,7 @@ const PopupCard = ({
             }}
           >
             <CiCircleInfo size={30} />
-            <p style={{ marginLeft: "10px" }}>Yashil park malumot</p>
+            <p style={{ marginLeft: "10px" }}>Yashil park malumoti</p>
           </div>
           <IoMdClose
             onClick={handleClosePopup}
@@ -71,31 +66,13 @@ const PopupCard = ({
           />
           <button
             onClick={handlePrevClick}
-            style={{
-              position: "absolute",
-              bottom: "10px",
-              right: "50px",
-              backgroundColor: "#319864",
-              color: "white",
-              border: "none",
-              padding: "10px",
-              cursor: "pointer",
-            }}
+            className="slider__button slider__button-left"
           >
             {"<"}
           </button>
           <button
             onClick={handleNextClick}
-            style={{
-              position: "absolute",
-              bottom: "10px",
-              right: "10px",
-              backgroundColor: "#319864",
-              color: "white",
-              border: "none",
-              padding: "10px",
-              cursor: "pointer",
-            }}
+            className="slider__button slider__button-right"
           >
             {">"}
           </button>
@@ -107,7 +84,9 @@ const PopupCard = ({
           <CardItem title={"Daraxt turi"} info={typeTree} />
           <CardItem title={"Masul tashkilot"} info={guiltyPerson} />
           <CardItem title={"Manzil"} info={location} />
-          <button onClick={handleMoreClick}>More</button>
+          <Button size="sm" onClick={handleMoreClick}>
+            More
+          </Button>
         </div>
       </div>
     </div>
@@ -115,21 +94,3 @@ const PopupCard = ({
 };
 
 export default PopupCard;
-
-const CardItem = ({ title, info }: { title: string; info: string }) => {
-  return (
-    <div
-      style={{
-        display: "flex",
-        flexDirection: "row",
-        alignItems: "center",
-        justifyContent: "space-between",
-        borderBottom: "1px solid gray",
-        flexWrap: "wrap",
-      }}
-    >
-      <p style={{ color: "gray", marginRight: "10px" }}>{title}:</p>
-      <span style={{ color: "#319864" }}>{info}</span>
-    </div>
-  );
-};

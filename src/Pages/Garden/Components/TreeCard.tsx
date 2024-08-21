@@ -6,9 +6,7 @@ interface ITreeCardProps {
 
 const TreeCard = ({ img, className, onClick }: ITreeCardProps) => {
   return (
-    <div onClick={onClick}>
-      <img src={img} alt="tree" className={className} />
-    </div>
+    <img src={img} alt="tree" onClick={onClick} className={className} />
   );
 };
 

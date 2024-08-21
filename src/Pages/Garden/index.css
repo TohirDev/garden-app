@@ -1,11 +1,6 @@
-body,
-html {
-  font-family: sans-serif;
-}
-
 .garden {
   height: 800px;
-  width: 1200px;
+  width: 1100px;
   background: url("../public/tree_example (1).svg");
   background-repeat: no-repeat;
   position: relative;
@@ -33,7 +28,7 @@ html {
 
 .tree-three {
   bottom: 250px;
-  right: 500px;
+  right: 400px;
 }
 .overlay {
   background-color: rgba(0, 0, 0, 0.4);

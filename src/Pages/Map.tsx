@@ -7,6 +7,8 @@ import {
   Popup,
   TileLayer,
 } from "react-leaflet";
+import { NavLink } from "react-router-dom";
+import Button from "../Components/Button";
 import { pupUps, uzbData } from "../Constants/uzb";
 
 const center: [number, number] = [40.12442709646927, 67.87769254689282];
@@ -18,7 +20,7 @@ function Map() {
   });
 
   return (
-    <div style={{ height: "500px", width: "100%" }}>
+    <div style={{ height: "500px", width: "95%" }}>
       <MapContainer
         center={center}
         zoom={7}
@@ -27,6 +29,7 @@ function Map() {
           height: "100%",
           borderRadius: "10px",
           boxShadow: "rgba(100, 100, 111, 0.2) 0px 7px 29px 0px",
+          margin: "20px",
         }}
       >
         <TileLayer
@@ -94,6 +97,16 @@ function Map() {
           );
         })}
       </MapContainer>
+      <div style={{ padding: "20px" }}>
+        <h2>
+          Avval shunga o'xshash map yasaganman, shunga buni ham qo'shib
+          qo'ydim
+        </h2>
+
+        <NavLink to={"/garden"}>
+          <Button size="md">Go to Garden Page</Button>
+        </NavLink>
+      </div>
     </div>
   );
 }

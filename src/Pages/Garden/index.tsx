@@ -1,9 +1,11 @@
 import { useState } from "react";
-import { useNavigate } from "react-router-dom";
-import PopupCard from "../Components/PopCard";
-import TreeCard from "../Components/TreeCard";
-import { trees } from "../Constants/tree-datas";
-import { TTrees } from "../Types";
+import { NavLink, useNavigate } from "react-router-dom";
+import Button from "../../Components/Button";
+import { trees } from "../../Constants/tree-datas";
+import { TTrees } from "../../Types";
+import PopupCard from "./Components/PopupCard";
+import TreeCard from "./Components/TreeCard";
+import "./index.css";
 
 function Garden() {
   const [selectedTree, setSelectedTree] = useState<TTrees | null>(null);
@@ -29,13 +31,18 @@ function Garden() {
         display: "flex",
         alignItems: "center",
         justifyContent: "space-around",
-        paddingTop: "70px",
+        height: "100vh",
       }}
     >
-      <h1 style={{ width: "30%" }}>
-        O‘zbekiston Respublikasi Ekologiya, atrof-muhitni muhofaza qilish
-        va iqlim o‘zgarishi vazirligi
-      </h1>
+      <div style={{ width: "30%" }}>
+        <h1>
+          O‘zbekiston Respublikasi Ekologiya, atrof-muhitni muhofaza qilish
+          va iqlim o‘zgarishi vazirligi
+        </h1>
+        <NavLink to={"/map"}>
+          <Button size="md">Uzbekistan Map</Button>
+        </NavLink>
+      </div>
       <div className="garden">
         {trees.map((tree) => (
           <TreeCard
@@ -49,17 +56,9 @@ function Garden() {
       {selectedTree && (
         <PopupCard
           key={selectedTree.id}
-          id={selectedTree.id}
-          region={selectedTree.region}
-          city={selectedTree.city}
-          guiltyPerson={selectedTree.guiltyPerson}
-          location={selectedTree.location}
-          typeTree={selectedTree.typeTree}
-          description={selectedTree.description}
           handleClosePopup={handleClosePopup}
           handleMoreClick={handleMoreClick}
-          images={selectedTree.images}
-          title={selectedTree.title}
+          {...selectedTree}
         />
       )}
     </div>

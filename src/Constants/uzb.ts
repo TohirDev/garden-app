@@ -27350,7 +27350,7 @@ export const pupUps = [
     geo: [40.12442709646927, 67.87769254689282],
     tumanlar: [
       {
-        name: "MICROSOFGT",
+        name: "Arnasoy tumani",
         number: 3,
       },
       {
@@ -28010,7 +28010,7 @@ export const pupUps = [
     geo: [37.33577404703163, 67.39998787228755],
     tumanlar: [
       {
-        name: "GOOOOGLE",
+        name: "Arnasoy tumani",
         number: 3,
       },
       {
