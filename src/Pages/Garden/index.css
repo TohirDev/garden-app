@@ -1,7 +1,7 @@
 .garden {
   height: 800px;
   width: 1100px;
-  background: url("../public/tree_example (1).svg");
+  background: url("../../../public/treebg.svg");
   background-repeat: no-repeat;
   position: relative;
   box-shadow: 0 0 30px 4px rgba(0, 0, 0, 0.4);
@@ -29,45 +29,4 @@
 .tree-three {
   bottom: 250px;
   right: 400px;
-}
-.overlay {
-  background-color: rgba(0, 0, 0, 0.4);
-  width: 100%;
-  height: 100%;
-  position: absolute;
-
-  z-index: 10;
-  display: grid;
-  place-items: center;
-}
-.popup-card {
-  background-color: white;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  width: 400px;
-  max-width: 400px;
-  padding-bottom: 20px;
-}
-
-.close-button {
-  position: absolute;
-  top: 10px;
-  right: 10px;
-  background: none;
-  border: none;
-  font-size: 20px;
-  cursor: pointer;
-}
-
-.popup-card button {
-  margin-top: 10px;
-  padding: 5px 10px;
-  background-color: #007bff;
-  color: white;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-}
-
-.popup-card button:hover {
-  background-color: #0056b3;
 }
